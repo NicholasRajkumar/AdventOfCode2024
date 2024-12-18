@@ -3,14 +3,12 @@ import re
 class Solution:
 
     def part1(self, input):
-        #parse the stupid ass input.txt format
         left = re.findall("\n(\d+)", input)
         right = re.findall("(\d+)\n", input)
         for i in range(len(left)):
             left[i] = int(left[i])
             right[i] = int(right[i])
 
-        #now we code
         result = 0
         left = sorted(left)
         right = sorted(right)
@@ -20,14 +18,12 @@ class Solution:
         return result
 
     def part2(self, input):
-        # parse the stupid ass input.txt format
         left = re.findall("\n(\d+)", input)
         right = re.findall("(\d+)\n", input)
         for i in range(len(left)):
             left[i] = int(left[i])
             right[i] = int(right[i])
 
-        #code
         result = 0
         for i in range(len(left)):
             result += (left[i] * right.count(left[i]))
